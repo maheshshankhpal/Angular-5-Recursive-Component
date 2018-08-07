@@ -1,0 +1,24 @@
+<!-- fxFlex="{{flex}}" -->
+<mat-form-field  id="{{ngId}}"> 
+  <input matInput 
+        placeholder="{{ngLabel}}" 
+        [(ngModel)]="ngModel" 
+        [disabled]="ngDisable"
+        (ngModelChange)="onModelChange()"
+        maxlength="{{ngMaxLength}}" 
+        (blur)="onBlur($event)" 
+        (keyup)="onKeyUp($event)"
+        (keydown)="onKeyDown($event)"
+        >
+</mat-form-field>
+
+<!-- {{ngLabel}}
+<input [(ngModel)]="ngModel" 
+        [disabled]="ngDisable"
+        
+        (ngModelChange)="onModelChange()"
+        maxlength="{{ngMaxLength}}"
+        (blur)="onBlur($event)" 
+        (keyup)="onKeyUp($event)"
+        (keydown)="onKeyDown($event)"
+        > -->

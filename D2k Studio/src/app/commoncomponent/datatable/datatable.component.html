@@ -1,0 +1,83 @@
+<p-toolbar>
+
+  <div class="ui-toolbar-group-left" *ngIf="gridOptions['isAddBtnShow']">
+    <button (click)="onAddClick()" tabindex="-1" style="margin-left: 20px; background:transparent ; color: white;background-color: #136fb3;font-size: 27px;"
+      matTooltip="Add New" mat-mini-fab>
+      <i class="pi pi-plus-circle"></i>
+    </button>
+  </div>
+  <div class="ui-toolbar-group-left" *ngIf="gridOptions['isUploadBtnShow']">
+    <button (click)="ShowUploader()" tabindex="-1" style="margin-left: 20px; background:transparent ; color: white;background-color: #136fb3;"
+      matTooltip="Upload Excel template" mat-mini-fab>
+      <i class="material-icons">
+        cloud_upload
+      </i>
+    </button>
+    TO UPLOAD NEW EXCEL TEMPLATE
+  </div>
+  <div class="ui-toolbar-group-right">
+      <p-multiSelect [options]="gridOptions.columns" [displaySelectedLabel]="false" (onChange)="changeFieldVisibility($event.itemValue)"
+        [(ngModel)]="selectedColumns" defaultLabel="Manage Column" optionLabel="header"></p-multiSelect>
+    </div>
+</p-toolbar>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td *ngIf="gridOptions['rowSelect']" class="headerstyle">
+        <p-checkbox [(ngModel)]="rowSelectAll" binary="true" (onChange)="selectAllRows()"></p-checkbox>
+      </td>
+      <td *ngFor="let key of gridOptions.columns  | columnPropertiesFilter : {visible: true}" class="headerstyle">
+        {{key.header}}
+        <br/>
+        <input *ngIf="gridOptions.IsSearchEnable" class="form-control input-sm" type="text" [(ngModel)]="dataFilter[key.data_key]"
+          style="width: 100%;margin-top: 4px;">
+
+      </td>
+      <td *ngIf="gridOptions.isFileDownloadBtn" class="headerstyle">
+        Download File
+      </td>
+      <td *ngIf="gridOptions.isCloneBtn" class="headerstyle">
+        Item clone 
+      </td>
+      <td *ngIf="gridOptions.IsAction" class="headerstyle">
+        Action
+      </td>
+    </tr>
+  </thead>
+  <tbody style="min-height: 500px">
+    <tr *ngFor="let meta of gridOptions['data'] | tablefilter:dataFilter | paginate: { itemsPerPage: items, currentPage: p };">
+      <td *ngIf="gridOptions.rowSelect" style="border: 1px dotted #d4d4d4;">
+        <p-checkbox [(ngModel)]="meta['isRowSelected']" binary="true" (onChange)="onrowSelection(meta)"></p-checkbox>
+      </td>
+      <td *ngFor="let key of gridOptions.columns | columnPropertiesFilter : {visible: true}" [ngClass]="key.data_cssClass" [ngStyle]="key.data_style"
+        style="border: 1px dotted #d4d4d4;">
+        {{meta[key.data_key]}}
+      </td>
+      <td *ngIf="gridOptions.isFileDownloadBtn" style="border: 1px dotted #d4d4d4;">
+        <a href="{{meta.fileUrl}}" style="background:transparent ; color: white;background-color: #136fb3;" mat-icon-button
+         matTooltip="Download Excel template"
+          target="_blank">
+          <mat-icon aria-label="Example icon-button with a heart icon">cloud_download</mat-icon>
+        </a>
+      </td>
+      <td *ngIf="gridOptions.isCloneBtn" style="border: 1px dotted #d4d4d4;">
+        <button  (click)="OnItemClone(meta)" tabindex="-1" style="margin-left: 20px; background:transparent ; color: white;background-color: #136fb3;"
+          matTooltip="Clone this Item" mat-mini-fab>
+          <i class="material-icons">
+            file_copy
+          </i>
+        </button>
+      </td>
+      <td *ngIf="gridOptions.IsAction" style="border: 1px dotted #d4d4d4;">
+        <button mat-raised-button class="ActionButton" (click)="onrowSelection(meta)" matTooltip="View/Edit">
+          View / Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+    <p-dropdown [options]="itemsperPage" [(ngModel)]="items"></p-dropdown>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</p-toolbar>

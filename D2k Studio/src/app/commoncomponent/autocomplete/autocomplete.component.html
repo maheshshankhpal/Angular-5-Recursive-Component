@@ -1,0 +1,18 @@
+<mat-form-field fxFlex class="example-full-width" id="{{ngId}}">
+  <input matInput placeholder="{{ngLable}}" [matAutocomplete]="auto" [formControl]="autoCompleteControls.controls['AutoComplete']"
+    [(ngModel)]="ngModel" (ngModelChange)="onModelChange()" (blur)="onInputBlur()"  [disabled]="ngDisable">
+
+  <mat-autocomplete #auto="matAutocomplete" id="AutoComplete" [displayWith]="showValueAutoComplete" >
+    <mat-option *ngFor="let master of filter()" [value]="master">
+      <div [ngSwitch]="displayStyle">
+        <div *ngSwitchCase="'CodeValue'">
+          <span>Code : {{ master.Code }}</span>
+          <small>Description : {{master.Description}}</small>
+        </div>
+        <div *ngSwitchDefault>
+          <small>{{master.Description}}</small>
+        </div>
+      </div>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

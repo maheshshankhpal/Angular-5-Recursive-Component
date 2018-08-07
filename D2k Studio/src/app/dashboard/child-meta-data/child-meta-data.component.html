@@ -1,0 +1,42 @@
+<div *ngFor="let meta of childData">
+
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        {{meta.title}}
+      </mat-expansion-panel-header>
+
+      <div *ngIf="meta.hasLast==false">
+
+        <app-child-meta-data [childData]="meta.data">
+
+        </app-child-meta-data>
+
+      </div>
+      <div *ngIf="meta.hasLast==true">
+
+
+        <mat-list>
+          <mat-list-item *ngFor="let linkInfo of meta.data" style="cursor: pointer;">
+
+            <span matLine>
+              <!-- <a href="{{linkInfo.url}}" target="_blank">
+                <mat-icon *ngIf="linkInfo.format=='file'" mat-list-icon>cloud_download</mat-icon>
+                <mat-icon *ngIf="linkInfo.format=='web'" mat-list-icon>desktop_windows</mat-icon>
+                 <mat-icon *ngIf="linkInfo.format=='copy'" mat-list-icon>copy</mat-icon> 
+
+              </a> -->
+              <a href="{{linkInfo.url}}" target="_blank">{{linkInfo.title}}</a>
+            </span>
+            <p matLine *ngFor="let info of linkInfo.info">{{info}}</p>
+
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+
+
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

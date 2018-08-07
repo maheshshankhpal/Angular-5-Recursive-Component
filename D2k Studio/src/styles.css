@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+
+/deep/ .ui-dropdown {
+    border: 1px solid black;
+  }
+  
+  /deep/.ui-widget input,ui-multiselect,
+  .ui-widget select,
+  .ui-widget textarea {
+    border: 1px solid black;
+  }

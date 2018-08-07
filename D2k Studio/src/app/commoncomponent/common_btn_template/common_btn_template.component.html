@@ -1,0 +1,30 @@
+<div class="col-md-12 col-lg-12 col-sm-12">
+  <div class="form-group-footer" style="margin-top: 5px;">
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <div class="button-row" style="padding: 15px !important;">
+          <button  id="btnAddMore" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Add">
+            <mat-icon  class="space">add_circle</mat-icon>
+            ADD</button>
+          <button id="btnAuthorize" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Authorize">
+            <mat-icon  class="space">check_circle</mat-icon>
+            AUTHORIZE</button>
+          <button  id="btnReject" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Reject">
+            <mat-icon  class="space">cancel</mat-icon>
+            REJECT</button>
+          <button  id="btnSave" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Save">
+            <mat-icon  class="space">check_circle</mat-icon>
+            SAVE</button>
+          <button  id="btnEdit" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Edit">
+            <mat-icon  class="space">edit</mat-icon>
+            EDIT</button>
+          <button  id="btnCancel" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Cancel">
+            <mat-icon  class="space">cancel</mat-icon>
+            CANCEL</button>
+          <button  id="btnDelete" mat-raised-button class="d2kbutton" (click)="OperationWork($event)" [hidden]="!BtnState.Delete">
+            <mat-icon  class="space">delete_forever</mat-icon>
+            DELETE</button>
+        </div>
+
+      </div>
+  </div>
+</div>
