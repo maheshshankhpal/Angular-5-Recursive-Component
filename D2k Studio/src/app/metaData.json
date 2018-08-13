@@ -1,0 +1,174 @@
+[
+  {
+    "title": "Projects",
+    "data": [
+      {
+        "title": "Legal Plus",
+        "hasLast": false,
+        "data": [
+          {
+            "title": "BOB",
+            "hasLast": false,
+            "data": [
+              {
+                "title": "Testing",
+                "hasLast": false,
+                "data": [
+                  {
+                    "title": "Web Application",
+                    "hasLast": true,
+                    "data": [
+                      {
+                        "title": "http://192.168.1.41:8002/LEGAL_PLUS_WEBAPP_BOB_TEST/",
+                        "format": "web",
+                        "url": "http://192.168.1.41:8002/LEGAL_PLUS_WEBAPP_BOB_TEST/",
+                        "info": [
+                          "User Name - legalchecker",
+                          "Password - legal123456"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Database",
+                    "hasLast": true,
+                    "data": [
+                      {
+                        "title": "Database - BOB_LEGAL_PLUS_TEST",
+                        "format": "db",
+                        "info": [
+                          "Server - dbserver2\\dbserver2"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "SLBC",
+        "hasLast": false,
+        "data": [
+          {
+            "title": "Devlopment",
+            "hasLast": false,
+            "data": [
+              {
+                "title": "Web Application",
+                "hasLast": true,
+                "data": [
+                  {
+                    "title": "http://192.168.1.41/dynamicreport/",
+                    "format": "web",
+                    "url": "http://192.168.1.41/dynamicreport/",
+                    "info": [
+                      "User Name - Omi568",
+                      "Password - 123456"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Database",
+                "hasLast": true,
+                "data": [
+                  {
+                    "title": "Database - SLBC_POC",
+                    "format": "db",
+                    "info": [
+                      "Server - SERVER2016\\SERVER2017"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Testing",
+            "hasLast": false,
+            "data": [
+              {
+                "title": "Web Application",
+                "hasLast": true,
+                "data": [
+                  {
+                    "title": "http://192.168.1.41/dynamicreporttest/",
+                    "format": "web",
+                    "url": "http://192.168.1.41/dynamicreporttest/",
+                    "info": [
+                      "User Name - Omi568",
+                      "Password - 123456"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Database",
+                "hasLast": true,
+                "data": [
+                  {
+                    "title": "Database - SLBC_TEST",
+                    "format": "db",
+                    "info": [
+                      "Server - SERVER2016\\SERVER2017"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "D2K",
+    "data": [
+      {
+        "title": "Links",
+        "hasLast": false,
+        "data": [
+          {
+            "title": "Website",
+            "hasLast": true,
+            "data": [
+              {
+                "title": "Link",
+                "format": "web",
+                "hasLast": true,
+                "url": "http://www.d2ktechnologies.com/"
+              }
+            ]
+          },
+          {
+            "title": "Email",
+            "hasLast": true,
+            "data": [
+              {
+                "title": "Link",
+                "format": "web",
+                "hasLast": true,
+                "url": "https://mail.d2kindia.com/webmail/"
+              }
+            ]
+          },
+          {
+            "title": "Redmine",
+            "hasLast": true,
+            "data": [
+              {
+                "title": "Link",
+                "format": "web",
+                "hasLast": true,
+                "url": "http://13.126.20.83/"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

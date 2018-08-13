@@ -27,7 +27,8 @@
                  <mat-icon *ngIf="linkInfo.format=='copy'" mat-list-icon>copy</mat-icon> 
 
               </a> -->
-              <a href="{{linkInfo.url}}" target="_blank">{{linkInfo.title}}</a>
+              <a href="{{linkInfo.url}}" *ngIf="linkInfo.format=='web'" target="_blank">{{linkInfo.title}}</a>
+              <span *ngIf="linkInfo.format=='db'">{{linkInfo.title}}</span>
             </span>
             <p matLine *ngFor="let info of linkInfo.info">{{info}}</p>
 

@@ -1,1 +1,41 @@
-<router-outlet></router-outlet>
+<div class="container" style="max-width: 100%;">
+  <br>
+  <h5 mat-line> D2K Elements</h5>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div [ngClass]="{'col-sm-3':(childData.length>0),'col-sm-12':!(childData.length>0)}">
+      <div>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let meta of metaData">
+
+            <mat-expansion-panel-header>
+              {{meta.title}}
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item *ngFor="let clients of meta.data" style="cursor: pointer;" (click)="metaDetails(clients)">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <h4 mat-line>{{clients.title}}</h4>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </mat-list>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div [ngClass]="{'col-sm-9':showChild}">
+      <div *ngIf="showChild">
+
+        <h4 mat-line><mat-icon mat-list-icon>folder</mat-icon> {{childData[0].title}}</h4>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <app-child-meta-data [value]="true" [childData]="childData[0].data">
+
+          </app-child-meta-data>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+</div>
